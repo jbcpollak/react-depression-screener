@@ -12,8 +12,8 @@ var AnswerList = React.createClass({
 		this.props.handleAnswer(value);
 	},
 	render: function() {
-		var answerNodes = answers.map(answer =>
-			<ul key={answer.value} onClick={this.handleClick.bind(this, answer.value)}>
+		var answerNodes = answers.map((answer, index) =>
+			<ul key={index} onClick={this.handleClick.bind(this, answer.value)}>
 				{answer.text}
 			</ul>
 		);

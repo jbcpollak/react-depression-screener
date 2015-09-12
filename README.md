@@ -13,7 +13,12 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ---
 
-Notes and blog posts I read while learning React
+### Notes
+
+*  This is my first React project
+*  I am reasonably familiar with NPM, Gulp, etc, so I used a boilerplate template to get started
+
+### Blog posts I read while learning React
 
 *  [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
 *  [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
@@ -21,8 +26,18 @@ Notes and blog posts I read while learning React
     I used this to figure out how to use reactify and setup React correctly to work with browserify
 *  [Official React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
     With the project organization setup 'professionally', I started working through the tutorial
+*  General Stack Overflow Questions
 
----
+### Todos
+
+*   Styling
+*   Testing and Continuous Integration
+*   Continuous Deployment
+*   Organize js files into hierarchies
+*   Improved code consistency (naming conventions, organization, etc)
+
+
+### Left over Notes from the Boilerplate Template I used
 
 ### SASS
 

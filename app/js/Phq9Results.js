@@ -31,7 +31,8 @@ function getDiagnosis(score) {
 var Phq9Results = React.createClass({
 	getInitialState: function() {
 		return {
-			therapists: []
+			therapists: [],
+			selectedTherapistIdx: undefined
 		};
 	},
 	componentDidMount: function() {
@@ -40,15 +41,27 @@ var Phq9Results = React.createClass({
 			'therapists': therapists
 		});
 	},
+	selectTherapist: function(value) {
+		this.setState({
+			selectedTherapistIdx: value
+		});
+	},
 	render: function() {
 		var therapistList;
+		var therapistConfirmation;
 
-		if (this.props.score >= 10) {
+		if (typeof this.state.selectedTherapistIdx !== 'undefined') {
+			therapistConfirmation = <div className="therapistContact">
+				<p>Thank you.</p>
+				<p>The office of {this.state.therapists[this.state.selectedTherapistIdx].name} will call you to set up an appointment.</p>
+			</div>;
+		} else if (this.props.score >= 10) {
 			therapistList = <div className="therapistList">
 				<h1>Therapists</h1>
-				<TherapistList therapists={this.state.therapists} />
+				<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
 			</div>;
 		}
+
 
 		return (
 			<div className="phq9ResultsBox">
@@ -57,7 +70,8 @@ var Phq9Results = React.createClass({
 					{this.props.score} - {getDiagnosis(this.props.score)}
 				</div>
 				{therapistList}
-				<div classname="retake">
+				{therapistConfirmation}
+				<div className="retake">
 					<button onClick={this.props.resetScore}>Retake Test</button>
 				</div>
 			</div>
