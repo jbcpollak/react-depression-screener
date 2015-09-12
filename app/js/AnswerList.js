@@ -13,7 +13,7 @@ var AnswerList = React.createClass({
 	},
 	render: function() {
 		var answerNodes = answers.map((answer, index) =>
-			<ul key={index} onClick={this.handleClick.bind(this, answer.value)}>
+			<ul id={"answer-"+answer.value} key={index} onClick={this.handleClick.bind(this, answer.value)}>
 				{answer.text}
 			</ul>
 		);

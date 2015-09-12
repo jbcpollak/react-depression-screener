@@ -42,7 +42,7 @@ var QuestionBox = React.createClass({
 
         return (
             <div className="questionBox">
-                <h1>Question {this.state.curQuestion+1}</h1>
+                <h1>Question <span id="questionId">{this.state.curQuestion+1}</span></h1>
                 {questions[this.state.curQuestion]}
                 <AnswerList handleAnswer={this.handleAnswer} />
             </div>

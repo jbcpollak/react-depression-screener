@@ -54,7 +54,7 @@ module.exports = {
   },
 
   'test': {
-    'karma': 'test/karma.conf.js',
+    'karma': process.cwd() + '/test/karma.conf.js',
     'protractor': 'test/protractor.conf.js'
   }
 

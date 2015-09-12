@@ -10,7 +10,8 @@ module.exports = function(config) {
     basePath: '../',
     frameworks: ['jasmine', 'browserify'],
     preprocessors: {
-      'app/js/**/*.js': ['browserify', 'babel', 'coverage']
+      'app/js/**/*.js': ['browserify', 'babel', 'coverage'],
+      'test/unit/**/*.js': ['browserify']
     },
     browsers: ['Chrome'],
     reporters: ['progress', 'coverage'],
@@ -20,6 +21,7 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: [
+        'reactify',
         'bulkify',
         istanbul({
           instrumenter: isparta,
@@ -35,11 +37,6 @@ module.exports = function(config) {
     urlRoot: '/__karma__/',
 
     files: [
-      // app-specific code
-      'app/js/main.js',
-
-      // 3rd-party resources
-      'node_modules/angular-mocks/angular-mocks.js',
 
       // test files
       'test/unit/**/*.js'
