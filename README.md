@@ -15,8 +15,10 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 Notes and blog posts while learning React
 
-* [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
-* [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
+*  [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
+*  [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
+*  [React Boiler Plate](https://github.com/christianalfoni/react-app-boilerplate)
+    I used this to figure out how to use reactify and setup React correctly to work with browserify
 
 ---
 
