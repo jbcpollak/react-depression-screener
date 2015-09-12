@@ -23,6 +23,8 @@
     "node": ">=0.12.x"
   },
   "devDependencies": {
+    "react": "^0.13.3",
+    "jquery": "^2.1.4",
     "angular": "^1.4.5",
     "angular-mocks": "^1.4.5",
     "angular-ui-router": "^0.2.15",
@@ -72,7 +74,8 @@
     "uglifyify": "^3.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.4.0"
+    "watchify": "^3.4.0",
+    "reactify": "^1.1.1"
   },
   "scripts": {
     "pretest": "npm install",

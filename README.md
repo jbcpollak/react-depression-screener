@@ -13,6 +13,13 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ---
 
+Notes and blog posts while learning React
+
+* [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
+* [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
+
+---
+
 ### AngularJS
 
 AngularJS is a MVW (Model-View-Whatever) Javascript Framework for creating single-page web applications. In this boilerplate, it is used for all the application routing as well as all of the frontend views and logic.

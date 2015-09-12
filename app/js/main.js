@@ -1,7 +1,11 @@
 'use strict';
 
-var angular = require('angular');
+var React = require('react');
+var App = require('./App.js');
 
+React.render(<App/>, document.getElementById('content'));
+
+/*
 // angular modules
 require('angular-ui-router');
 require('./templates');
@@ -32,3 +36,4 @@ angular.element(document).ready(function() {
   angular.bootstrap(document, ['app']);
 
 });
+*/

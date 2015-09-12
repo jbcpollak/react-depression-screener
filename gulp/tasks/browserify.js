@@ -8,6 +8,7 @@ var source       = require('vinyl-source-stream');
 var sourcemaps   = require('gulp-sourcemaps');
 var buffer       = require('vinyl-buffer');
 var streamify    = require('gulp-streamify');
+var reactify     = require('reactify');
 var watchify     = require('watchify');
 var browserify   = require('browserify');
 var babelify     = require('babelify');
@@ -37,6 +38,7 @@ function buildScript(file) {
 
   var transforms = [
     babelify,
+    reactify,
     debowerify,
     ngAnnotate,
     'brfs',
