@@ -47,6 +47,7 @@ var Phq9Results = React.createClass({
 		});
 	},
 	render: function() {
+		var scoreDiv;
 		var therapistList;
 		var therapistConfirmation;
 
@@ -55,20 +56,23 @@ var Phq9Results = React.createClass({
 				<p>Thank you.</p>
 				<p>The office of {this.state.therapists[this.state.selectedTherapistIdx].name} will call you to set up an appointment.</p>
 			</div>;
-		} else if (this.props.score >= 10) {
-			therapistList = <div className="therapistList">
-				<h1>Therapists</h1>
-				<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
+		} else {
+			scoreDiv = <div className="diagnosis">
+				<h1>Score</h1>
+				{this.props.score} - {getDiagnosis(this.props.score)}
 			</div>;
-		}
 
+			if (this.props.score >= 10) {
+				therapistList = <div className="therapistList">
+					<h1>Therapists</h1>
+					<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
+				</div>;
+			}
+		}
 
 		return (
 			<div className="phq9ResultsBox">
-				<div className="diagnosis">
-					<h1>Score</h1>
-					{this.props.score} - {getDiagnosis(this.props.score)}
-				</div>
+				{scoreDiv}
 				{therapistList}
 				{therapistConfirmation}
 				<div className="retake">
