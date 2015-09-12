@@ -13,7 +13,7 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ---
 
-Notes and blog posts while learning React
+Notes and blog posts I read while learning React
 
 *  [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
 *  [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
@@ -21,20 +21,6 @@ Notes and blog posts while learning React
     I used this to figure out how to use reactify and setup React correctly to work with browserify
 *  [Official React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
     With the project organization setup 'professionally', I started working through the tutorial
-
----
-
-##### Dependency injection
-
-Dependency injection is carried out with the `ng-annotate` library. In order to take advantage of this, a simple comment of the format:
-
-```javascript
-/**
- * @ngInject
- */
-```
-
-needs to be added directly before any Angular functions/modules. The Gulp tasks will then take care of adding any dependency injection, requiring you only to specify the dependencies within the function call and nothing more.
 
 ---
 

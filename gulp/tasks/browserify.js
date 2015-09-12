@@ -37,12 +37,12 @@ function buildScript(file) {
   }
 
   var transforms = [
-    babelify,
-    reactify,
-    debowerify,
-    ngAnnotate,
-    'brfs',
-    'bulkify'
+      reactify,
+      babelify,
+      debowerify,
+      ngAnnotate,
+      'brfs',
+      'bulkify'
   ];
 
   transforms.forEach(function(transform) {
