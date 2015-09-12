@@ -19,33 +19,10 @@ Notes and blog posts while learning React
 *  [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
 *  [React Boiler Plate](https://github.com/christianalfoni/react-app-boilerplate)
     I used this to figure out how to use reactify and setup React correctly to work with browserify
+*  [Official React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
+    With the project organization setup 'professionally', I started working through the tutorial
 
 ---
-
-### AngularJS
-
-AngularJS is a MVW (Model-View-Whatever) Javascript Framework for creating single-page web applications. In this boilerplate, it is used for all the application routing as well as all of the frontend views and logic.
-
-The AngularJS files are all located within `/app/js`, structured in the following manner:
-
-```
-/controllers
-  _index.js   (the main module on which all controllers will be mounted, loaded in main.js)
-  example.js
-/directives
-  _index.js   (the main module on which all directives will be mounted, loaded in main.js)
-  example.js
-/services
-  _index.js   (the main module on which all services will be mounted, loaded in main.js)
-  example.js
-constants.js  (any constant values that you want to make available to Angular)
-main.js       (the main file read by Browserify, also where the application is defined and bootstrapped)
-on_run.js     (any functions or logic that need to be executed on app.run)
-on_config.js  (all route definitions and any logic that need to be executed on app.config)
-templates.js  (this is created via Gulp by compiling your views, and will not be present beforehand)
-```
-
-Controllers, services, directives, etc. should all be placed within their respective folders, and will be automatically required via their respective `_index.js` using `bulk-require`. Most other logic can be placed in an existing file, or added in new files as long as it is required inside `main.js`.
 
 ##### Dependency injection
 

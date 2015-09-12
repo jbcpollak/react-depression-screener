@@ -1,7 +1,7 @@
 'use strict';
 
 var AppSettings = {
-  appTitle: 'Example Application',
+  appTitle: 'React Depression Screener',
   apiUrl: '/api/v1'
 };
 

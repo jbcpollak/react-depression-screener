@@ -3,12 +3,7 @@
 var React = require('react');
 var App = require('./App.js');
 
-var therapists = [
-  {name: "Pete Hunt", phoneNumber: "917-555-1212"},
-  {name: "Jordan Walke", phoneNumber: "917-555-2131"}
-];
-
-React.render(<App therapists={therapists}/>,
+React.render(<App />,
     document.getElementById('content'));
 
 /*
