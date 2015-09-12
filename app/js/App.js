@@ -2,40 +2,40 @@
 
 var React = require('react');
 
-var TherapistList = require('./TherapistList');
 var QuestionBox = require('./QuestionBox');
+var Phq9Results = require('./Phq9Results');
 
-var therapists = [
-    {name: "Pete Hunt", phoneNumber: "917-555-1212"},
-    {name: "Jordan Walke", phoneNumber: "917-555-2131"},
-    {name: "Toni Barnett", phoneNumber: "994-131-1061"}
-];
+// Make sure we handle touch events
+React.initializeTouchEvents(true);
 
-var TherapistBox = React.createClass({
+
+var App = React.createClass({
     getInitialState: function() {
-        return {'therapists': []};
+        return {
+        };
     },
-    componentDidMount: function() {
-        // Wrap with async server call
+    doneWithQuestions: function(score) {
         this.setState({
-            'therapists': therapists
+            score: score
+        });
+    },
+    resetScore: function() {
+        this.setState({
+            score: undefined
         });
     },
     render: function() {
-        return (
-            <div className="therapistBox">
-                <h1>Therapists</h1>
-                <TherapistList therapists={this.state.therapists} />
-            </div>
-        );
-    }
-});
+        if (typeof this.state.score === 'undefined') {
+            return (
+                <div className="app">
+                    <QuestionBox doneWithQuestions={this.doneWithQuestions} />
+                </div>
+            );
+        }
 
-var App = React.createClass({
-    render: function() {
         return (
             <div className="app">
-                <QuestionBox />
+                <Phq9Results score={this.state.score} resetScore={this.resetScore} />
             </div>
         );
     }

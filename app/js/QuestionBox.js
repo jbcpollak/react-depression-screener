@@ -7,17 +7,30 @@ var React = require('react');
 
 var questions = require('./Questions');
 var AnswerList = require('./AnswerList');
+var TherapistList = require('./TherapistList');
 
 
 var QuestionBox = React.createClass({
     getInitialState: function() {
-        return {};
+        return {
+            score: 0
+        };
     },
     nextQuestion: function() {
         this.setState({
-            curQuestion: 0,
-            question: questions[0]
+            curQuestion: (typeof this.state.curQuestion === 'undefined') ? 0 : this.state.curQuestion+1
         });
+    },
+    handleAnswer: function(value) {
+        this.setState({
+            score: this.state.score + value
+        });
+
+        if (this.state.curQuestion+1 < questions.length) {
+            this.nextQuestion();
+        } else {
+            this.props.doneWithQuestions(this.state.score);
+        }
     },
     componentDidMount: function() {
         this.nextQuestion();
@@ -26,11 +39,12 @@ var QuestionBox = React.createClass({
         if (typeof this.state.curQuestion === 'undefined') {
             return(<div></div>)
         }
+
         return (
             <div className="questionBox">
                 <h1>Question {this.state.curQuestion+1}</h1>
-                {this.state.question}
-                <AnswerList />
+                {questions[this.state.curQuestion]}
+                <AnswerList handleAnswer={this.handleAnswer} />
             </div>
         );
     }

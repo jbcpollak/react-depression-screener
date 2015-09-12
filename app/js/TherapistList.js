@@ -8,9 +8,9 @@ var Therapist = require('./Therapist');
 
 var TherapistList = React.createClass({
     render: function() {
-        var therapistNodes = this.props.therapists.map(function (therapist) {
+        var therapistNodes = this.props.therapists.map(function (therapist, i) {
             return (
-                <Therapist name={therapist.name}>
+                <Therapist key={i} name={therapist.name}>
                     {therapist.phoneNumber}
                 </Therapist>
             );
