@@ -12,6 +12,14 @@ react-depression-screener
 ### Notes
 
 *  This is my first React project!
+*  I decided to spend my time touching on all aspects of a robust project, rather than refining one specific aspect. Specifically, I wanted to have:
+  1. Correctly functioning code
+  2. A robust build system
+  3. Proof-of-concept continuous integration
+  4. Continuous deployment and a live demo
+  5. Proof-of-concept use of a UI framework
+  6. Use of the GitHub issues feature to track progress on the stories
+*  Because I touched on everything, things like robust unit test coverage and fancy UI design were sacrificed.
 *  I used the material-ui React components to dress up the UI a bit. After using this library I started to see how React could be useful.
 *  I used a boilerplate template to get started, but it had a lot of bugs that required tweaking.
 *  Getting Karma to from cleaner was a HUGE pain. It took probably 1/3 of the time of this project.
