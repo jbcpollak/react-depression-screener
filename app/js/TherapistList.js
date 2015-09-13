@@ -5,19 +5,20 @@
 
 var React = require('react');
 var Therapist = require('./Therapist');
+var mui = require('material-ui');
+var ListItem = mui.ListItem;
+var List = mui.List;
 
 var TherapistList = React.createClass({
-    render: function() {
+    render: function () {
         var therapistNodes = this.props.therapists.map((therapist, i) =>
-            <Therapist key={i} name={therapist.name} onClick={this.props.selectTherapist.bind(this, i)}>
-                {therapist.phoneNumber}
-            </Therapist>
+            <ListItem key={i} primaryText={therapist.name} secondaryText={therapist.phoneNumber} onClick={this.props.selectTherapist.bind(this, i)} />
         );
         return (
-            <div className="therapistList">
+            <List>
                 {therapistNodes}
-            </div>
-        );
+            </List>
+        )
     }
 });
 

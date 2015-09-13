@@ -4,6 +4,9 @@
 'use strict';
 
 var React = require('react');
+var mui = require('material-ui');
+var ListItem = mui.ListItem;
+var List = mui.List;
 
 var answers = require('./Answers');
 
@@ -13,14 +16,12 @@ var AnswerList = React.createClass({
 	},
 	render: function() {
 		var answerNodes = answers.map((answer, index) =>
-			<ul id={"answer-"+answer.value} key={index} onClick={this.handleClick.bind(this, answer.value)}>
-				{answer.text}
-			</ul>
+			<ListItem primaryText={answer.text} id={"answer-"+answer.value} key={index} onClick={this.handleClick.bind(this, answer.value)} />
 		);
 		return (
-			<div className="answerList">
+			<List>
 				{answerNodes}
-			</div>
+			</List>
 		);
 	}
 });

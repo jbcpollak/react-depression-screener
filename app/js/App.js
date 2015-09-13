@@ -1,18 +1,31 @@
 'use strict';
 
 var React = require('react');
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var Colors = mui.Styles.Colors;
 
 var QuestionBox = require('./QuestionBox');
 var Phq9Results = require('./Phq9Results');
-
-// Make sure we handle touch events
-React.initializeTouchEvents(true);
-
 
 var App = React.createClass({
     getInitialState: function() {
         return {
         };
+    },
+	childContextTypes: {
+		muiTheme: React.PropTypes.object
+	},
+
+	getChildContext: function() {
+		return {
+			muiTheme: ThemeManager.getCurrentTheme()
+		};
+	},
+    componentWillMount: function() {
+        ThemeManager.setPalette({
+            accent1Color: Colors.deepOrange500
+        });
     },
     doneWithQuestions: function(score) {
         this.setState({

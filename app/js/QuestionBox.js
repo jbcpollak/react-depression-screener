@@ -5,6 +5,12 @@
 
 var React = require('react');
 
+var mui = require('material-ui');
+var Card = mui.Card;
+var CardTitle = mui.CardTitle;
+var CardText = mui.CardText;
+var CardActions = mui.CardActions;
+
 var questions = require('./Questions');
 var AnswerList = require('./AnswerList');
 var TherapistList = require('./TherapistList');
@@ -37,15 +43,17 @@ var QuestionBox = React.createClass({
     },
     render: function() {
         if (typeof this.state.curQuestion === 'undefined') {
-            return(<div></div>)
+            return(<div></div>);
         }
 
+	    var subTitle = "Question " + (this.state.curQuestion+1) + " of " + questions.length;
         return (
-            <div className="questionBox">
-                <h1>Question <span id="questionId">{this.state.curQuestion+1}</span></h1>
-                {questions[this.state.curQuestion]}
-                <AnswerList handleAnswer={this.handleAnswer} />
-            </div>
+            <Card id="questionId">
+                <CardTitle title={questions[this.state.curQuestion]} subtitle={subTitle} />
+	            <CardActions>
+	                <AnswerList handleAnswer={this.handleAnswer} />
+                </CardActions>
+            </Card>
         );
     }
 });

@@ -5,6 +5,13 @@
 
 var React = require('react');
 
+var mui = require('material-ui');
+var Card = mui.Card;
+var CardTitle = mui.CardTitle;
+var CardText = mui.CardText;
+var CardActions = mui.CardActions;
+var FlatButton = mui.FlatButton;
+
 var TherapistList = require('./TherapistList');
 
 var therapists = [
@@ -47,38 +54,40 @@ var Phq9Results = React.createClass({
 		});
 	},
 	render: function() {
-		var scoreDiv;
+		var scoreTitle;
 		var therapistList;
 		var therapistConfirmation;
 
 		if (typeof this.state.selectedTherapistIdx !== 'undefined') {
-			therapistConfirmation = <div className="therapistContact">
+			therapistConfirmation = <CardText>
 				<p>Thank you.</p>
 				<p>The office of {this.state.therapists[this.state.selectedTherapistIdx].name} will call you to set up an appointment.</p>
-			</div>;
+			</CardText>;
 		} else {
-			scoreDiv = <div className="diagnosis">
-				<h1>Score</h1>
-				{this.props.score} - {getDiagnosis(this.props.score)}
-			</div>;
+			var title= "Depression Severity: " + getDiagnosis(this.props.score);
+			var subtitle="Score: " + this.props.score + " out of a maximum of 27";
+			scoreTitle = <CardTitle title={title} subtitle={subtitle}/>;
 
 			if (this.props.score >= 10) {
-				therapistList = <div className="therapistList">
-					<h1>Therapists</h1>
-					<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
+				therapistList = <div>
+					<CardTitle title="Recommended Therapists">
+					</CardTitle>
+					<CardText>
+						<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
+					</CardText>
 				</div>;
 			}
 		}
 
 		return (
-			<div className="phq9ResultsBox">
-				{scoreDiv}
+			<Card>
+				{scoreTitle}
 				{therapistList}
 				{therapistConfirmation}
-				<div className="retake">
-					<button onClick={this.props.resetScore}>Retake Test</button>
-				</div>
-			</div>
+				<CardActions>
+					<FlatButton onClick={this.props.resetScore} label="Retake Test" primary="true"/>
+				</CardActions>
+			</Card>
 		);
 
 	}
