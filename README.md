@@ -20,7 +20,9 @@ react-depression-screener
 ### Blog posts I read while learning React
 
 *  [Is ReactJS Fast (vs Angular)](http://blog.500tech.com/is-reactjs-fast/)
+    Seems like the answer is "no".
 *  [Using ReactJS with Angular](http://blog.500tech.com/using-reactjs-with-angularjs)
+    (I didn't actually do this)
 *  [React Boiler Plate](https://github.com/christianalfoni/react-app-boilerplate)
     I used this to figure out how to use reactify and setup React correctly to work with browserify
 *  [Official React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
