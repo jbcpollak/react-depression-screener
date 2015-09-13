@@ -17,6 +17,10 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 * [Live Demo](http://jbcpollak.github.io/react-depression-screener/)
 
+### Build Status
+
+[![Circle CI](https://circleci.com/gh/jbcpollak/react-depression-screener.svg?style=svg)](https://circleci.com/gh/jbcpollak/react-depression-screener)
+
 ### Notes
 
 *  This is my first React project
