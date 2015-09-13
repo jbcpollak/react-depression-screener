@@ -15,10 +15,8 @@ describe('E2E: Questions', function () {
 	});
 
 	it('should show question 1', function () {
-		browser.sleep(10000).then(function() {
-			var element = browser.findElement(by.css('#question'));
-			expect(element.getAttribute("title")).toEqual('Do you have little interest or pleasure in doing things?');
-		});
+		var element = browser.findElement(by.css('#question'));
+		expect(element.getAttribute("title")).toEqual('Do you have little interest or pleasure in doing things?');
 	});
 
 	it('should show go to question 2', function () {
