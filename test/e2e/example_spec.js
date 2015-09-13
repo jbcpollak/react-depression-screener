@@ -18,10 +18,12 @@ describe('E2E: Questions', function () {
 	});
 
 	it('should show go to question 2', function () {
-		var answer2 = browser.findElement(by.css('#answer-2'));
-		answer2.click();
+		browser.sleep(200).then(function() {
+			var answer2 = browser.findElement(by.css('#answer-2'));
+			answer2.click();
 
-		var element = browser.findElement(by.css('#questionId'));
-		expect(element.getText()).toEqual('2');
+			var element = browser.findElement(by.css('#questionId'));
+			expect(element.getText()).toEqual('2');
+		});
 	});
 });

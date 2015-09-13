@@ -13,6 +13,10 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ---
 
+### Demo
+
+* [Live Demo](http://jbcpollak.github.io/react-depression-screener/)
+
 ### Notes
 
 *  This is my first React project
@@ -31,7 +35,7 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 ### Todos
 
 *   Styling
-*   Testing and Continuous Integration
+*   Continuous Integration
 *   Continuous Deployment
 *   Organize js files into hierarchies
 *   Improved code consistency (naming conventions, organization, etc)

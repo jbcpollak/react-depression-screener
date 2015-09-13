@@ -52,6 +52,7 @@
     "gulp-util": "^3.0.6",
     "imagemin-pngcrush": "^4.1.0",
     "isparta": "^3.0.4",
+    "jquery": "^2.1.4",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.9",
     "karma-babel-preprocessor": "^5.2.2",
@@ -77,8 +78,5 @@
     "test": "karma start test/karma.conf.js",
     "preprotractor": "npm run update-webdriver",
     "protractor": "npm run protractor test/protractor.conf.js"
-  },
-  "dependencies": {
-    "materialize-css": "^0.96.1"
   }
 }
