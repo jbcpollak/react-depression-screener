@@ -1,18 +1,6 @@
 react-depression-screener
 =====================================
 
-### Getting up and running
-
-1. Clone this repo from `https://github.com/jbcpollak/react-depression-screener.git`
-2. Run `npm install` from the root directory
-3. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
-4. Your browser will automatically be opened and directed to the browser-sync proxy address
-5. To prepare assets for production, run the `gulp prod` task (Note: the production task does not fire up the express server, and won't provide you with browser-sync's live reloading. Simply use `gulp dev` during development. More information below)
-
-Now that `gulp dev` is running, the server is up as well and serving files from the `/build` directory. Any changes in the `/app` directory will be automatically processed by Gulp and the changes will be injected to any open browsers pointed at the proxy address.
-
----
-
 ### Demo
 
 * [Live Demo](http://jbcpollak.github.io/react-depression-screener/)
@@ -51,6 +39,19 @@ If this was a real product, this is additional work I would want to complete ove
 *   Organize js files into hierarchies
 *   Improved code consistency (naming conventions, organization, etc)
 
+---
+
+### Development
+
+1. Clone this repo from `https://github.com/jbcpollak/react-depression-screener.git`
+2. Run `npm install` from the root directory
+3. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
+4. Your browser will automatically be opened and directed to the browser-sync proxy address
+5. To prepare assets for production, run the `gulp prod` task (Note: the production task does not fire up the express server, and won't provide you with browser-sync's live reloading. Simply use `gulp dev` during development. More information below)
+
+Now that `gulp dev` is running, the server is up as well and serving files from the `/build` directory. Any changes in the `/app` directory will be automatically processed by Gulp and the changes will be injected to any open browsers pointed at the proxy address.
+
+---
 
 ### Left over notes about testing from the Boilerplate Template I used
 
