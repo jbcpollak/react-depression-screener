@@ -4,8 +4,8 @@
 'use strict';
 
 var Questions = [
-    "Little interest or pleasure in doing things?",
-    "Feeling down, depressed, or hopeless?",
+    "Do you have little interest or pleasure in doing things?",
+    "Are you feeling down, depressed, or hopeless?",
     "Trouble falling or staying asleep, or sleeping too much?",
     "Feeling tired or having little energy?",
     "Poor appetite or overeating?",

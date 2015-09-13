@@ -49,7 +49,7 @@ var QuestionBox = React.createClass({
 	    var subTitle = "Question " + (this.state.curQuestion+1) + " of " + questions.length;
         return (
             <Card id="questionId">
-                <CardTitle title={questions[this.state.curQuestion]} subtitle={subTitle} />
+                <CardTitle id="question" title={questions[this.state.curQuestion]} subtitle={subTitle} />
 	            <CardActions>
 	                <AnswerList handleAnswer={this.handleAnswer} />
                 </CardActions>
