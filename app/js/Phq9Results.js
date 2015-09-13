@@ -57,6 +57,9 @@ var Phq9Results = React.createClass({
 		var scoreTitle;
 		var therapistList;
 		var therapistConfirmation;
+		var retakeTest = <CardActions>
+			<FlatButton onClick={this.props.resetScore} label="Retake Test" primary="true"/>
+		</CardActions>;
 
 		if (typeof this.state.selectedTherapistIdx !== 'undefined') {
 			therapistConfirmation = <CardText>
@@ -76,6 +79,9 @@ var Phq9Results = React.createClass({
 						<TherapistList therapists={this.state.therapists} selectTherapist={this.selectTherapist} />
 					</CardText>
 				</div>;
+
+				// clear the button if you need to choose a therapist
+				retakeTest = undefined;
 			}
 		}
 
@@ -84,9 +90,7 @@ var Phq9Results = React.createClass({
 				{scoreTitle}
 				{therapistList}
 				{therapistConfirmation}
-				<CardActions>
-					<FlatButton onClick={this.props.resetScore} label="Retake Test" primary="true"/>
-				</CardActions>
+				{retakeTest}
 			</Card>
 		);
 
