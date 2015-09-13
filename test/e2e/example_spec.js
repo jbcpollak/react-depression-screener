@@ -4,6 +4,8 @@
 
 describe('E2E: Questions', function () {
 
+	browser.ignoreSynchronization = true;
+
 	beforeEach(function () {
 		browser.get('/');
 	});
@@ -13,7 +15,7 @@ describe('E2E: Questions', function () {
 	});
 
 	it('should show question 1', function () {
-		browser.sleep(1000).then(function() {
+		browser.sleep(10000).then(function() {
 			var element = browser.findElement(by.css('#question'));
 			expect(element.getAttribute("title")).toEqual('Do you have little interest or pleasure in doing things?');
 		});
