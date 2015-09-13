@@ -3,8 +3,8 @@
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 
-gulp.task('test', ['server'], function() {
+gulp.task('test', ['server'], function(done) {
 
-  return runSequence('unit');
+  return runSequence('unit', done);
 
 });

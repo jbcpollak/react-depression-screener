@@ -34,9 +34,10 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ### Todos
 
-*   Styling
 *   Continuous Integration
 *   Continuous Deployment
+*   Gulp configuration is more complicated than it needs to be - express? Really?
+*   Re-Enable End-To-End / Integration Tests
 *   Organize js files into hierarchies
 *   Improved code consistency (naming conventions, organization, etc)
 
