@@ -17,7 +17,7 @@ gulp.task('protractor', ['webdriver-update', 'webdriver', 'server'], function(cb
     // Make sure failed tests cause gulp to exit non-zero
     throw err;
   }).on('end', function() {
-    process.exit();
+    //process.exit();
     cb();
   });
 
