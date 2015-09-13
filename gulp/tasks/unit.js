@@ -5,9 +5,13 @@ var Server = require('karma').Server;
 var config = require('../config');
 
 gulp.task('unit', ['views'], function(done) {
+
 	new Server({
 		configFile: config.test.karma,
 		singleRun: true
-	}, done).start();
+	}, function(result) {
+		done();
+		process.exit();
+	}).start();
 
 });
