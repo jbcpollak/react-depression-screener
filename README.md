@@ -43,7 +43,9 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 If this was a real product, this is additional work I would want to complete over time
 
+*   all resource files should be hashcode versioned to protect against browser caching
 *   Gulp configuration is more complicated than it needs to be - express? Really?
+*   Add a version tag into the HTML
 *   Collect JUnit test report and have CircleCI capture and preserve it
 *   Re-Enable End-To-End / Integration Tests
 *   Organize js files into hierarchies
