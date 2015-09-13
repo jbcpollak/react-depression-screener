@@ -23,8 +23,11 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 ### Notes
 
-*  This is my first React project
-*  I am reasonably familiar with NPM, Gulp, etc, so I used a boilerplate template to get started
+*  This is my first React project!
+*  I used the material-ui React components to dress up the UI a bit. After using this library I started to see how React could be useful.
+*  I used a boilerplate template to get started, but it had a lot of bugs that required tweaking.
+*  Getting Karma to from cleaner was a HUGE pain. It took probably 1/3 of the time of this project.
+*  The integration tests work fine locally, but not on CircleCI. I decided getting them to work wasn't worth the effort.
 
 ### Blog posts I read while learning React
 
@@ -34,88 +37,19 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
     I used this to figure out how to use reactify and setup React correctly to work with browserify
 *  [Official React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
     With the project organization setup 'professionally', I started working through the tutorial
-*  General Stack Overflow Questions
+*  General Stack Overflow Questions, mostly about strange gulp behavior
 
 ### Todos
 
-*   Continuous Integration
-*   Continuous Deployment
 *   Gulp configuration is more complicated than it needs to be - express? Really?
 *   Re-Enable End-To-End / Integration Tests
 *   Organize js files into hierarchies
 *   Improved code consistency (naming conventions, organization, etc)
 
 
-### Left over Notes from the Boilerplate Template I used
+### Left over notes about testing from the Boilerplate Template I used
 
-### SASS
-
-SASS, standing for 'Syntactically Awesome Style Sheets', is a CSS extension language adding things like extending, variables, and mixins to the language. This boilerplate provides a barebones file structure for your styles, with explicit imports into `app/styles/main.scss`. A Gulp task (discussed later) is provided for compilation and minification of the stylesheets based on this file.
-
----
-
-### Browserify
-
-Browserify is a Javascript file and module loader, allowing you to `require('modules')` in all of your files in the same manner as you would on the backend in a node.js environment. The bundling and compilation is then taken care of by Gulp, discussed below.
-
----
-
-### Gulp
-
-Gulp is a "streaming build system", providing a very fast and efficient method for running your build tasks.
-
-##### Web Server
-
-Gulp is used here to provide a very basic node/Express web server for viewing and testing your application as you build. It serves static files from the `build/` directory, leaving routing up to AngularJS. All Gulp tasks are configured to automatically reload the server upon file changes. The application is served to `localhost:3002` once you run the `gulp` task. To take advantage of the fast live reload injection provided by browser-sync, you must load the site at the proxy address (within this boilerplate will by default be `localhost:3000`). To change the settings related to live-reload or browser-sync, you can access the UI at `localhost:3001`.
-
-##### Scripts
-
-A number of build processes are automatically run on all of our Javascript files, run in the following order:
-
-- **JSHint:** Gulp is currently configured to run a JSHint task before processing any Javascript files. This will show any errors in your code in the console, but will not prevent compilation or minification from occurring.
-- **Browserify:** The main build process run on any Javascript files. This processes any of the `require('module')` statements, compiling the files as necessary.
-- **Babelify:** This uses [babelJS](https://babeljs.io/) to provide support for ES6+ features.
-- **Debowerify:** Parses `require()` statements in your code, mapping them to `bower_components` when necessary. This allows you to use and include bower components just as you would npm modules.
-- **ngAnnotate:** This will automatically add the correct dependency injection to any AngularJS files, as mentioned previously.
-- **Uglifyify:** This will minify the file created by Browserify and ngAnnotate.
-
-The resulting file (`main.js`) is placed inside the directory `/build/js/`.
-
-##### Styles
-
-Just one plugin is necessary for processing our SASS files, and that is `gulp-sass`. This will read the `main.scss` file, processing and importing any dependencies and then minifying the result. This file (`main.css`) is placed inside the directory `/build/css/`.
-
-- **gulp-autoprefixer:** Gulp is currently configured to run autoprefixer after compiling the scss.  Autoprefixer will use the data based on current browser popularity and property support to apply prefixes for you. Autoprefixer is recommended by Google and used in Twitter, WordPress, Bootstrap and CodePen.
-
-##### Images
-
-Any images placed within `/app/images` will be automatically copied to the `build/images` directory. If running `gulp prod`, they will also be compressed via imagemin.
-
-##### Views
-
-When any changes are made to the `index.html` file, the new file is simply copied to the `/build/` directory without any changes occurring.
-
-Files inside `/app/views/`, on the other hand, go through a slightly more complex process. The `gulp-angular-templatecache` module is used in order to process all views/partials, creating the `template.js` file briefly mentioned earlier. This file will contain all the views, now in Javascript format inside Angular's `$templateCache` service. This will allow us to include them in our Javascript minification process, as well as avoid extra HTTP requests for our views.
-
-##### Watching files
-
-All of the Gulp processes mentioned above are run automatically when any of the corresponding files in the `/app` directory are changed, and this is thanks to our Gulp watch tasks. Running `gulp dev` will begin watching all of these files, while also serving to `localhost:3002`, and with browser-sync proxy running at `localhost:3000` (by default).
-
-##### Production Task
-
-Just as there is the `gulp dev` task for development, there is also a `gulp prod` task for putting your project into a production-ready state. This will run each of the tasks, while also adding the image minification task discussed above. There is also an empty `gulp deploy` task that is included when running the production task. This deploy task can be fleshed out to automatically push your production-ready site to your hosting setup.
-
-**Reminder:** When running the production task, gulp will not fire up the express server and serve your index.html. This task is designed to be run before the `deploy` step that may copy the files from `/build` to a production web server.
-
-##### Pre-compressing text assets
-
-When running with `gulp prod`, a pre-compressed file is generated in addition to uncompressed file (.html.gz, .js.gz, css.gz). This is done to enable web servers serve compressed content without having to compress it on the fly. Pre-compression is handled by `gzip` task.
-
-##### Testing
-
-A Gulp tasks also exists for running the test framework (discussed in detail below). Running `gulp test` will run any and all tests inside the `/test` directory and show the results (and any errors) in the terminal.
-
----
+These might be useful debugging the E2E tests.
 
 ### Testing
 
@@ -150,7 +84,5 @@ An example test is provided for the following types of AngularJS modules:
 - `unit/controllers/example_spec.js`
 - `unit/services/example_spec.js`
 - `unit/constants_spec.js`
-
-Testing AngularJS directives becomes a bit more complex involving mock data and DOM traversal, and so has been omitted from this boilerplate. This can be read about in detail [here](http://newtriks.com/2013/04/26/how-to-test-an-angularjs-directive/).
 
 All unit tests are run with `gulp unit`. When running unit tests, code coverage is simultaneously calculated and output as an HTML file to the `/coverage` directory.
