@@ -39,9 +39,12 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
     With the project organization setup 'professionally', I started working through the tutorial
 *  General Stack Overflow Questions, mostly about strange gulp behavior
 
-### Todos
+### TODOs
+
+If this was a real product, this is additional work I would want to complete over time
 
 *   Gulp configuration is more complicated than it needs to be - express? Really?
+*   Collect JUnit test report and have CircleCI capture and preserve it
 *   Re-Enable End-To-End / Integration Tests
 *   Organize js files into hierarchies
 *   Improved code consistency (naming conventions, organization, etc)
