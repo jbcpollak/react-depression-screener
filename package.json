@@ -1,7 +1,7 @@
 {
   "name": "react-depression-screener",
   "version": "0.1.0",
-  "author": "Joshua Chaitin-Pollak <jakemmarsh@gmail.com>",
+  "author": "Joshua Chaitin-Pollak <josh@joshpollska.com>",
   "description": "Demo React application using SASS, Gulp, Browserify, and possibly AngularJS while (hopefully) also utilizing best practices.",
   "repository": {
     "type": "git",
